@@ -1,5 +1,26 @@
 Check if string contains 16 consecutive digit number (check if a string contains a credit card number)
-REGEXP_CONTAINS((DimensionWithQueryString,'^,'\\d{16}')
+'^\\d{16}
 
 Check if string contains an italian codice fiscale
-REGEXP_CONTAINS(DimensionWithQueryString,'^[A-Z]{6}\\d{2}[A-Z]\\d{2}[A-Z]\\d{3}[A-Z]$')
+^[A-Z]{6}\\d{2}[A-Z]\\d{2}[A-Z]\\d{3}[A-Z]$
+
+Check IP Address - IPv6
+[=,;]\s*(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))($|[-,;/?&#])
+
+Check IP Address - IPv4
+[^vn][=,;]\s*((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)($|[-,;:/?&#])
+
+Check Common Name
+\b(Michael|(B|W)illy?(iam)?|Dav(id|e)|(D|R)ic(k|hard)|Ch(arl(es|ie)|uck))\b
+
+Check Common password 
+[?&,;](pwd?|password)=[^&#]
+
+Check CreditCard
+[=,;]\s*(\d{4}[-\s+]*){3}\d{4}($|[,;:/?&#])
+
+Check Amex
+[=,;]\s*\d{4}[-\s+]*\d{6}[-\s+]*\d{5}[-\s+]*($|[,;:/?&#])
+
+Check EMAIL
+[^&?#/](@|%40)([^&?#/]+)\.
