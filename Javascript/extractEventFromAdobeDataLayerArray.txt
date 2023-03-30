@@ -1,0 +1,11 @@
+let finalEventArray = []
+
+for (let i = 0; i < adobeDataLayer.length; i++) {
+    if (adobeDataLayer[i][event] === "productImpression") {
+      finalEventArray.append(adobeDataLayer[i])
+    }
+}
+
+
+
+
