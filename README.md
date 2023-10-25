@@ -1,1 +1,1 @@
-# some google analytics tips
+# some cool web analytics tips
